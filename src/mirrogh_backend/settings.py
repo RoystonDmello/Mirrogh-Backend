@@ -15,7 +15,6 @@ import os
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
 
@@ -25,7 +24,7 @@ SECRET_KEY = 'anl8zi@rjt4@$jr#3w+2&f(@i1xlnsnvzd)2e%152a6jqn7yk('
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['192.168.1.15']
+ALLOWED_HOSTS = ['192.168.1.15', '127.0.0.1', '0.0.0.0', '*']
 
 
 # Application definition
@@ -38,6 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'transformApp.apps.TransformAppConfig',
+
+    'rest_framework'
 ]
 
 MIDDLEWARE = [
@@ -118,11 +119,14 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
-
+#
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
-    os.path.join(BASE_DIR, "media"),
 ]
 
-STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), "static_cdn")
+THUMBS = 'thumbs'
+
+THUMBS_DIR = os.path.join(STATICFILES_DIRS[0], THUMBS)
+#
+# STATIC_ROOT = os.path.join(BASE_DIR, "static_cdn")
 MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), "media_cdn")

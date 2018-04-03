@@ -1,6 +1,6 @@
 from __future__ import print_function
 import sys
-import transform
+from . import transform
 import numpy as np
 import tensorflow as tf
 
