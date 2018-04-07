@@ -16,7 +16,8 @@ import numpy as np
 
 import os
 
-from neural_style import mirrogh as miro, image_utils as iu
+from neural_style import mirrogh as miro
+from utils import image_utils as iu
 from portrait import transform as trns
 
 
@@ -52,6 +53,8 @@ class ImageTransformView(APIView):
         img_str = iu.get_b64(transformed)
 
         sendable = {'image_string': img_str}
+
+        default_storage.delete(temp)
 
         return Response(sendable)
 
