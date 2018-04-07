@@ -8,9 +8,13 @@ import cv2
 import numpy as np
 
 from .deeplab import DeepLabModel
-import os 
+import os
 
-model = DeepLabModel(os.path.join(os.path.abspath(__file__)[:-13], 'models/big'))
+from django.conf import settings
+
+
+memory = 'big' #big or small depending on your VRAM
+model = DeepLabModel(os.path.join(settings.PORTRAIT_DIR, memory))
 
 def transform(img):
     """

@@ -37,9 +37,7 @@ class ImageTransformView(APIView):
         if style != 'portrait':
             img_arr = iu.get_arr(full_path)
 
-            base = settings.BASE_DIR
-            rel_model_path = os.path.join('models', style)
-            model_path =  os.path.join(base, rel_model_path)
+            model_path =  os.path.join(settings.MODELS_DIR, style)
 
             transformed =  miro.transform_img(img_arr, model_path)
             

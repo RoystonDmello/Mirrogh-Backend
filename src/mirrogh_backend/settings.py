@@ -127,6 +127,18 @@ STATICFILES_DIRS = [
 THUMBS = 'thumbs'
 
 THUMBS_DIR = os.path.join(STATICFILES_DIRS[0], THUMBS)
+
+MODELS = 'models'
+
+MODELS_DIR = os.path.join(BASE_DIR, MODELS)
+
+STYLES = 'styles'
+
+STYLES_DIR = os.path.join(MODELS_DIR, STYLES)
+
+PORTRAIT = 'portrait'
+
+PORTRAIT_DIR = os.path.join(MODELS_DIR, PORTRAIT)
 #
 # STATIC_ROOT = os.path.join(BASE_DIR, "static_cdn")
 MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), "media_cdn")
